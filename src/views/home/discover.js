@@ -1,10 +1,16 @@
 import React, { useEffect } from 'react';
 import { connect } from 'dva';
-import styles from '../IndexPage.css';
+import styles from './discover.css';
 // 引入icon
 import { Icon } from 'antd'
 // 引入轮播
 import { Carousel } from 'antd-mobile'
+
+// 引入图片
+import Person from '../../assets/3.jpg'
+import Everyone from '../../assets/4.jpg'
+import Songslist from '../../assets/5.jpg'
+import Rank from '../../assets/6.jpg'
 
 function DiscoverPage(props) {
   // 用hooks或者无状态组件来接受props里面的参数
@@ -14,6 +20,7 @@ function DiscoverPage(props) {
   // 在hooks中使用useEffect处理异步操作
   useEffect(()=>{
     props.getBanner()
+    props.getSongList()
   },[])
   
   return (
@@ -44,6 +51,38 @@ function DiscoverPage(props) {
           }
         </Carousel>
       </div>
+      <div className={styles.nav_list}>
+        <dl>
+          <dd><img src={Person} alt=""/></dd>
+          <dt>私人FM</dt>
+        </dl>
+        <dl>
+          <dd><img src={Everyone} alt=""/></dd>
+          <dt>每日推荐</dt>
+        </dl>
+        <dl>
+          <dd><img src={Songslist} alt=""/></dd>
+          <dt>歌单</dt>
+        </dl>
+        <dl>
+          <dd><img src={Rank} alt=""/></dd>
+          <dt>排行榜</dt>
+        </dl>
+      </div>
+      <div className={styles.recomm}>
+        <p>推荐歌单 > </p>
+      </div>
+      <div className={styles.songs}>
+          {
+            props.discover.songsList.map((item,ind)=>{
+              return <dl>
+                        <dd><img src={item.picUrl} alt=""/></dd>
+                        <dt>{item.name}</dt>
+                      </dl>
+            })
+          }
+      </div>
+      <dir className={styles.block}></dir>
     </div>
   )
 }
@@ -58,6 +97,9 @@ const mapDispatchToProps = dispatch => {
   return {
     getBanner: () => dispatch({
       type:"discover/getBanner"
+    }),
+    getSongList: () => dispatch({
+      type:"discover/getSongList"
     })
   }
 }

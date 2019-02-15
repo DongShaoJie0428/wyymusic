@@ -8,3 +8,8 @@ export function query() {
 export function getBanner() {
   return request('/banner')
 }
+
+// 推荐歌单
+export function getSongList() {
+  return request('/personalized')
+}

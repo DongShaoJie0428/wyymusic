@@ -1,47 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'dva';
-import styles from './IndexPage.css';
 
-import Weixin from '../assets/3.png'
-import QQ from '../assets/4.png'
-import Weibo from '../assets/5.png'
-import Emaile from '../assets/6.png'
+import style from './login.css';
 
-function IndexPage() {
+// 引入icon
+import phone from '../assets/shouji54.svg'
+import passwd from '../assets/mima.svg'
+
+// 引入提示框
+import { Toast } from "antd-mobile"
+
+
+function LoginPage() {
+  // 设置默认值
+  let [phoneNum, setphone] = useState("13717920530")
+  let [passWd, setpasswd] = useState("123789456...")
+
+  function submit(){
+    if(!/^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/.test(phoneNum)){
+      Toast.info("手机号输入有误")
+      return false
+    }
+    if(!passWd){
+      Toast.info("请输入密码")
+      return false
+    }
+  }
+
   return (
-    <div className={styles.pic}>
-      <div className={styles.btn}>
-        <p>手机号登陆</p>
-        <p>注册</p>
-      </div>
-      <div className={styles.use}>
-        <p>游客试用</p>
-      </div>
-      <div className={styles.footer}>
-        <div className={styles.footes}>
-          <dl>
-            <dt><img className={styles.bgimage} src={Weixin} alt='' /></dt>
-            <dd>微信</dd>
-          </dl>
-          <dl>
-            <dt><img className={styles.bgimage} src={QQ} alt='' /></dt>
-            <dd>QQ</dd>
-          </dl>
-          <dl>
-            <dt><img className={styles.bgimage} src={Weibo} alt='' /></dt>
-            <dd>微博</dd>
-          </dl>
-          <dl>
-            <dt><img className={styles.bgimage} src={Emaile} alt='' /></dt>
-            <dd>网易邮箱</dd>
-          </dl>
-        </div>
-      </div>
+    <div className="als">
+      <section>
+        <img className="ico" src={phone} alt="" />
+        <input type="text" value={phoneNum} onChange={e => setphone(e.target.value)} className="input" placeholder="手机号" />
+      </section>
+      <section>
+        <img className="ico" src={passwd} alt="" />
+        <input className="input" value={passWd} onChange={e => setpasswd(e.target.value)} type="password" placeholder="密码" />
+      </section>
+      <button className="btn" onClick={() => submit()}> 登陆 </button>
+      <p className="bp">
+        <span className="sps"> 忘记密码 </span>
+      </p>
     </div>
   );
 }
 
-IndexPage.propTypes = {
-};
-
-export default connect()(IndexPage);
+export default connect()(LoginPage);

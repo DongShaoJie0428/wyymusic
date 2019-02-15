@@ -1,0 +1,134 @@
+.home{
+  width:100%;
+  height:calc(100% - 65px);
+  margin-bottom: 65px;
+  .header{
+    position: relative;
+    width:100%;
+    height:230px;
+    background: #363B3E;
+    .top{
+      width:100%;
+      height:50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding:0 10px;
+      box-sizing: border-box;
+      .search{
+        flex: 1;
+        input{
+          position: relative;
+          width:90%;
+          height:30px;
+          border: none;
+          border-radius: 15px;
+          margin-left:15px;
+          background:#5B6061;
+          color:#ADB0B0;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .nav{
+    width:100%;
+    height:40px;
+    ul{
+      width:100%;
+      height:100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      li{
+        color:#fff;
+      }
+    }
+  }
+  .banner{
+    position: absolute;
+    left:20px;
+    top:100px;
+    touch-action: none;
+    width:90%;
+    height:170px;
+    margin:0 auto;
+    a{
+      width:100%;
+      height:170px;
+      img{
+        width:100%;
+        height:170px;
+        border-radius: 5px;
+      }
+    }
+  }
+  .nav_list{
+    width:100%;
+    height:80px;
+    margin-top:65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav_list dl{
+    width:25%;
+    height:80px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav_list dl img{
+    width:60px;
+    height:60px;
+  }
+  .nav_list dl dt{
+    font-size: 14px;
+  }
+  .recomm{
+    width:100%;
+    height:44px;
+    line-height: 44px;
+    padding-left:10px;
+    box-sizing: border-box;
+    border-top:solid 1px #ccc;
+    margin-top:35px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .songs{
+   
+    width:100%;
+    height:400px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .songs dl{
+    width:33%;
+    height:170px;
+  }
+  .songs dl dd{
+    width:30%;
+    height:100px;
+  }
+  .songs dl dd img{
+    width:125px;
+    height:125px;
+    padding:8px;
+    box-sizing: border-box;
+  }
+  .songs dl dt{
+    padding-top:20px;
+    padding-left:10px;
+    box-sizing: border-box;
+    font-size: 12px;
+  }
+  
+}
+.block{
+  width:100%;
+  height:65px;
+}

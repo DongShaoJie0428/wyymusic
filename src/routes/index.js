@@ -2,8 +2,9 @@ import React from 'react'
 import { Router } from 'dva/router';
 
 // 引入路由组件 一级路由
-import Login from "../views/login"
+import Register from "../views/register"
 import Home from "../views/home"
+import Login from "../views/login"
 
 // 引入二级路由
 import DiscoverPage from "../views/home/discover"
@@ -14,9 +15,12 @@ import RouterView from "./RouterView"
 
 let config = {
   routes:[{
+    path:"/register",
+    component:Register
+  },{
     path:"/login",
     component:Login
-  },{
+  }, {
     path:"/home",
     component: Home,
     children:[{
@@ -37,7 +41,7 @@ let config = {
     }]
   },{
     path:"*",
-    redirect:"/home"
+    redirect:"/register"
   }]
 }
 

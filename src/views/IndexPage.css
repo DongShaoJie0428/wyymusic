@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+:global(#root) {
+  width: 100%;
+  height: 100%;
+}
+
 .pic {
   position: relative;
   width: 100%;
@@ -49,9 +54,6 @@
 }
 
 .footer {
-  position: absolute;
-  left: 0px;
-  bottom: 30px;
   height: 90px;
   width: 100%;
 }
@@ -91,78 +93,44 @@
   font-size: 12px;
 }
 
-.home {
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0px;
+  background: #F3E8E5;
   width: 100%;
-  height: 100%;
-}
-
-.home .header {
-  position: relative;
-  width: 100%;
-  height: 230px;
-  background: #363B3E;
-}
-
-.home .header .top {
-  width: 100%;
-  height: 50px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
   box-sizing: border-box;
+  border-top: solid 1px #ccc;
 }
 
-.home .header .top .search {
-  flex: 1;
-}
-
-.home .header .top .search input {
-  position: relative;
-  width: 90%;
-  height: 30px;
-  border: none;
-  border-radius: 15px;
-  margin-left: 15px;
-  background: #5B6061;
-  color: #ADB0B0;
+.footer a {
+  width: 20%;
+  height: 100%;
+  color: #888888;
   text-align: center;
 }
 
-.home .nav {
-  width: 100%;
-  height: 40px;
-}
-
-.home .nav ul {
+.footer a dl {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 }
 
-.home .nav ul li {
-  color: #fff;
-}
-
-.home .banner {
-  position: absolute;
-  left: 20px;
-  top: 100px;
-  touch-action: none;
-  width: 90%;
-  height: 170px;
+.footer a dl dd {
+  width: 50%;
   margin: 0 auto;
 }
 
-.home .banner a {
-  width: 100%;
-  height: 170px;
+.footer a dl dd img {
+  width: 90%;
+  padding-top: 3px;
+  box-sizing: border-box;
 }
 
-.home .banner a img {
-  width: 100%;
-  height: 170px;
-  border-radius: 5px;
+.footer a dl dt {
+  margin-top: 5px;
 }

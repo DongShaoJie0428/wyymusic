@@ -1,0 +1,55 @@
+:global {
+  .als {
+    width: 100%;
+    height: 100%;
+    padding: 15px 2.5% 0 2.5%;
+    box-sizing: border-box;
+    background: #FBFCFD;
+  }
+
+  section {
+    position: relative;
+  }
+
+  .input {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 35px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    background: #FBFCFD;
+    font-size: 18px;
+  }
+
+  .ico {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 5px;
+    top: 13px;
+  }
+
+  .btn {
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    background: #333;
+    margin-top: 20px;
+    color: #eee;
+  }
+
+  .bp {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .sps {
+    padding-bottom: 2px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+  }
+}
