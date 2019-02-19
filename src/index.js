@@ -13,6 +13,7 @@ const app = dva();
 // 3. Model
 // 挂载 发现页面redux
 app.model(require('./models/discover').default);
+app.model(require('./models/login').default);
 
 // 4. Router
 // 挂在router路由信息

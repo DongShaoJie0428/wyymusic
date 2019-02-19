@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'dva';
-import styles from './discover.css';
+import styles from './css/discover.css';
 // 引入icon
 import { Icon } from 'antd'
 // 引入轮播
@@ -75,7 +75,7 @@ function DiscoverPage(props) {
       <div className={styles.songs}>
           {
             props.discover.songsList.map((item,ind)=>{
-              return <dl>
+              return <dl key={ind}>
                         <dd><img src={item.picUrl} alt=""/></dd>
                         <dt>{item.name}</dt>
                       </dl>

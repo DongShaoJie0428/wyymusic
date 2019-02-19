@@ -8,6 +8,8 @@ import Login from "../views/login"
 
 // 引入二级路由
 import DiscoverPage from "../views/home/discover"
+import MyPage from "../views/home/my"
+import AccountPage from "../views/home/account"
 
 // 引入配置路由组件
 import RouterView from "./RouterView"
@@ -34,10 +36,10 @@ let config = {
       component:props => <p>{JSON.stringify(props)}</p>
     }, {
       path:"/home/my",
-      component:props => <p>{JSON.stringify(props)}</p>
+      component: MyPage
     }, {
       path:"/home/account",
-      component:props => <p>{JSON.stringify(props)}</p>
+      component:AccountPage
     }]
   },{
     path:"*",

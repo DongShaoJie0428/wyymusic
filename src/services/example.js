@@ -13,3 +13,13 @@ export function getBanner() {
 export function getSongList() {
   return request('/personalized')
 }
+
+// 手机号登陆接口
+export function login(phone, password){
+  return request(`/login/cellphone?phone=${phone}&password=${password}`)
+}
+
+// 登陆状态
+export function loginStatus(){
+  return request('/login/status')
+}

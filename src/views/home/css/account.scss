@@ -1,0 +1,191 @@
+:global{
+  .number_wrap{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background: #EEEFF0;
+  }
+  .number_header{
+    width:100%;
+    height:44px;
+    background: #353A3C;
+    color:#fff;
+    line-height: 44px;
+    text-align: center;
+  }
+  .number_section{
+    width:100%;
+    .per {
+      width: 100%;
+      background: rgb(251, 252, 253);
+      margin-bottom: 10px;
+  
+      dl {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+  
+        dt {
+          width: 20%;
+          margin: 10px 10px;
+  
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+          }
+        }
+  
+        dd {
+          width: 80%;
+          display: flex;
+          justify-content: space-between;
+          padding-right: 10px;
+          box-sizing: border-box;
+  
+          div {
+            margin-top: 20px;
+  
+            .name {
+              font-size: 16px;
+            }
+  
+            .lv {
+              font-size: 12px;
+              line-height: 2;
+              border: 1px solid #ccc;
+              border-radius: 30px;
+              padding: 0 5px;
+              box-sizing: border-box;
+            }
+          }
+  
+          .qd {
+            border: 1px solid #ccc;
+            height: 25px;
+            line-height: 25px;
+            padding: 0 5px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            margin-top: 25px;
+            font-weight: 400;
+          }
+  
+          .money {
+            width: 12px;
+            height: 12px;
+            margin-right: 3px;
+          }
+        }
+      }
+      .lists {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+  
+        li {
+          flex: 1;
+          border-right: 1px solid #ccc;
+          margin: 6px;
+  
+          span {
+            display: block;
+            line-height: 1.5;
+          }
+  
+          .pens {
+            width: 12px;
+            height: 12px;
+          }
+  
+          .tbe {
+            color: #ccc;
+          }
+        }
+  
+        li:last-child {
+          border: none;
+        }
+      }
+    }
+  }
+  .number_section .number_top{
+    width:100%;
+    height:150px;
+    background: #fff;
+  }
+  .number_section .number_top h4{
+    width:90%;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    border:solid 1px #D2D3D3;
+    border-radius: 25px;
+    margin:0 auto;
+    font-weight: 100;
+    margin-top:20px;
+  }
+  .number_section .number_top p{
+    text-align:center;
+    line-height: 30px;
+  }
+  .number_section .number_top p:nth-child(1){
+    padding-top:10px;
+  }
+  .number_section .news{
+    width:100%;
+    height:44px;
+    margin-top:10px;
+    background: #fff;
+    img{
+      width:20px;
+      height:20px;
+      margin-left:10px;
+      margin-right: 10px;
+    }
+  }
+  .number_section .news p{
+    line-height: 44px;
+    display: inline-block;
+  }
+  .number_section .news i{
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .number_section .center{
+    width:100%;
+    height:176px;
+    margin-top:10px;
+    background: #fff;
+    img{
+      width:20px;
+      height:20px;
+      margin-left:10px;
+      margin-right: 10px;
+    }
+  }
+  .number_section .center li{
+    border-bottom: solid 1px #ccc;
+    width:100%;
+    height:44px;
+    line-height: 44px;
+  }
+  .number_section .center li i {
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .number_section .center li p{
+    display: inline;
+  }
+  .number_section .all{
+    width:100%;
+    height:425px;
+    background: #fff;
+  }
+  .block{
+    width:100%;
+    height:13px;
+    background: #EEEFF0;
+  }
+}
