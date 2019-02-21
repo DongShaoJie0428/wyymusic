@@ -23,3 +23,23 @@ export function login(phone, password){
 export function loginStatus(){
   return request('/login/status')
 }
+
+// 搜索
+export function searchResult(keywords){
+  return request(`/search?keywords= ${keywords}`)
+}
+
+// 热搜
+export function searchHot(){
+  return request("/search/hot")
+}
+
+// 搜索建议
+export function searchSuggest(keywords){
+  return request(`/search/suggest?keywords=${keywords}`)
+}
+
+// 歌曲详情
+export function getSongDetaile(ids){
+  return request(`/song/detail?ids=${ids}`)
+}

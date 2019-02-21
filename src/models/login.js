@@ -1,4 +1,4 @@
-import {login, loginStatus} from '../services/example'
+import {login } from '../services/example'
 import {setToken, getToken} from '../utils/index'
 import { routerRedux } from 'dva/router';
 
@@ -16,7 +16,7 @@ export default {
     setup({ dispatch, history }) {  // eslint-disable-line
       return history.listen(({ pathname }) => {
         console.log('pathname...', pathname);
-        if (pathname.indexOf('/login') == -1) {
+        if (pathname.indexOf('/login') === -1) {
           // 做token检测
           if (!getToken()){
             // 利用redux做路由跳转
@@ -35,7 +35,7 @@ export default {
       console.log('pasdasj:',payload);
       let res = yield call(login, payload.phoneNum, payload.passWord);
       console.log('login...', res);
-      if (res.data && res.data.code == 200){
+      if (res.data && res.data.code === 200){
         setToken(res.data.account.id);
         yield put({
           type: 'updateState',

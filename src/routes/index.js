@@ -5,6 +5,8 @@ import { Router } from 'dva/router';
 import Register from "../views/register"
 import Home from "../views/home"
 import Login from "../views/login"
+import Search from "../views/search"
+import Play from "../views/play"
 
 // 引入二级路由
 import DiscoverPage from "../views/home/discover"
@@ -22,6 +24,12 @@ let config = {
   },{
     path:"/login",
     component:Login
+  }, {
+    path:"/search",
+    component:Search
+  },{
+    path:"/play/:id",
+    component:Play
   }, {
     path:"/home",
     component: Home,

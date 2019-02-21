@@ -7,11 +7,18 @@ import QQ from '../assets/4.png'
 import Weibo from '../assets/5.png'
 import Emaile from '../assets/6.png'
 
-function IndexPage() {
+function IndexPage(props) {
+  console.log(props)
+
+  // 点击登录
+  function LoginPhone(){
+    props.history.push("/login")
+  }
+
   return (
     <div className={styles.pic}>
       <div className={styles.btn}>
-        <p>手机号登陆</p>
+        <p onClick={LoginPhone}>手机号登陆</p>
         <p>注册</p>
       </div>
       <div className={styles.use}>

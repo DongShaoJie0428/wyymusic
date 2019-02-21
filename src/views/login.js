@@ -19,9 +19,9 @@ function LoginPage(props) {
 
   // 用useEffect监听登陆状态
   useEffect(()=>{
-    if (props.status == 'fail'){
+    if (props.status === 'fail'){
       Toast.info('登陆失败!');
-    }else if(props.status == 'ok'){
+    }else if(props.status === 'ok'){
       let redirect = '/tab/friends';
       if (props.location.search){
         redirect = decodeURIComponent(props.location.search.replace('?redirect=', ''))
@@ -79,4 +79,4 @@ const mapDispatchToProps = dispatch=>{
     }
   }
 }
-export default connect(null, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

@@ -22,6 +22,13 @@ function DiscoverPage(props) {
     props.getBanner()
     props.getSongList()
   },[])
+
+  // 跳转搜索页面
+  function goSearch(){
+    props.history.push({
+      pathname:"/search"
+    })
+  }
   
   return (
     <div className={styles.home}>
@@ -29,7 +36,7 @@ function DiscoverPage(props) {
         <div className={styles.top}>
           <Icon type="bulb" style={{fontSize:"24px",color:"#fff"}} />
           <div className={styles.search}>
-            <input type="text" placeholder="猜你喜欢 浮生"/>
+            <input type="text" placeholder="猜你喜欢 浮生" onClick={()=>goSearch()}/>
           </div>  
           <Icon type="bar-chart" style={{fontSize:"24px",color:"#fff"}} />
         </div>
