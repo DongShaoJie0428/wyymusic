@@ -43,3 +43,8 @@ export function searchSuggest(keywords){
 export function getSongDetaile(ids){
   return request(`/song/detail?ids=${ids}`)
 }
+
+// 获取播放列表
+export function songUrl(ids){
+  return request(`/song/url?id=${ids}`)
+}

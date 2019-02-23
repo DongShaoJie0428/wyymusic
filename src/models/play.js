@@ -1,11 +1,12 @@
-import { getSongDetaile } from '../services/example'
+import { getSongDetaile, songUrl } from '../services/example'
 
 export default {
 
   namespace: 'play',
 
   state: {
-   songDetaile:[]
+   songDetaile:[],// 当前播放歌曲详情
+   songs:[] // 播放列表
   },
 
   // 异步操作，用generator函数去控制时序
@@ -13,11 +14,21 @@ export default {
   effects: {
     *getSongDetaile({payload},{call,put}){
       let data = yield call(getSongDetaile,payload.ids)
-      console.log("data detaile...",data)
+      let urls = yield call(songUrl,payload.ids)
+      // console.log("data detaile...",data)
+      console.log("data detaile...",urls)
+      data.data.songs.forEach(item=>{
+        urls.data.data.forEach(value=>{
+          if(item.id === value.id){
+            item.url = value.url
+          }
+        })
+      })
       yield put({
         type:"updataState",
         payload:{
-          songDetaile:data.data.songs
+          songDetaile:data.data.songs[0],
+          songs:data.data.songs
         }
       })
     }

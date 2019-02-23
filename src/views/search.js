@@ -43,9 +43,12 @@ function SearchPage(props) {
   // 跳转详情
   function goDetaile(e){
     if(e.target.tagName.toUpperCase() == 'LI') {
+      // 跳转播放页面
       props.history.push({
         pathname:`/play/${e.target.dataset.id}`
       })
+      // 吧搜索页面添加到歌单
+      props.addSongList({ids:props.search.searchResult.map(item=>item.id).join(',')})
     }
   }
 
@@ -111,6 +114,13 @@ const mapDispatchToProps = dispatch => {
     searchResult:payload=>{
       dispatch({
         type:"search/searchData",
+        payload
+      })
+    },
+    // 添加歌曲列表
+    addSongList:payload=>{
+      dispatch({
+        type:"play/getSongDetaile",
         payload
       })
     }
